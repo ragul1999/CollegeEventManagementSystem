@@ -1,0 +1,30 @@
+<div>
+    <form #userForm="ngForm" (ngSubmit)='addCollege(userForm.value)' style="margin-top: 50px; margin-left: 400px;">
+        <h3 style="margin-left: 180px;">Add College</h3>
+          <div class="form-group col-md-6">
+            <label for="collegename">Enter College Name</label>
+            <input type="text" class="form-control" name="name" placeholder="Enter college name" pattern="[A-Z a-Z]{1,}" ngModel required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="collegecode">Enter College Code</label>
+            <input type="tel" class="form-control" name="code" placeholder="Enter college code" pattern="[0-9]{4}" ngModel required>
+          </div>
+        <div class="form-group col-md-6">
+          <label for="city">Enter the College City</label>
+          <input type="text" class="form-control" name="city" placeholder="Enter college city" pattern="[A-Z a-z]{1,}" ngModel required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="state">Enter the College State</label>
+          <input type="text" class="form-control" name="state" placeholder="Enter college state" pattern="[A-Z a-z]{1,}" ngModel required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="emailid">Enter the email id</label>
+            <input type="email" class="form-control" name="emailId" placeholder="Enter the email id" ngModel required>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="contactnumber">Enter the contact number</label>
+            <input type="tel" class="form-control" name="phoneNumber" placeholder="Enter the contact number" pattern="[0-9]{10}" ngModel required>
+        </div>
+        <button type="submit" style="margin-left: 150px;" class="btn btn-primary">Add College</button>
+      </form>
+</div>

@@ -1,0 +1,25 @@
+.wrapper {
+    text-align: center;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}
+
+.wrapper2 {
+    text-align: left;
+    left: 10px;
+    top: 5px;
+    position: relative;
+}
+.wrapper1 {
+position: absolute;
+right: 20px;
+top: 1px;
+}
+
+.button {
+    position: absolute;
+    top: 50%;
+}

@@ -1,0 +1,19 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Accomodation Request Id</th>
+                <th>participant ID</th>
+                <th>Status Of Accomodation Request</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let viewAccomodations of viewAccomodation">
+                <td>{{viewAccomodations.id}}</td>
+                <td>{{viewAccomodations.participants.id}}</td>
+                <td>{{viewAccomodations.status}}</td>
+              </tr>
+        </tbody>
+      </table>
+      
+</div>

@@ -1,0 +1,21 @@
+<div>
+    <table class="center">
+        <thead>
+            <tr>
+                <th>Event Name</th>
+                <th>Event Date</th>
+                <th>Event Time</th>
+                <th>Contact Mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let eventParticipants of eventList">
+                <td>{{eventParticipants.event.name}}</td>
+                <td>{{eventParticipants.event.eventDate}}</td>
+                <td>{{eventParticipants.event.eventTime}}</td>
+                <td>{{eventParticipants.event.contactMail}}</td>
+              </tr>
+        </tbody>
+      </table>
+      
+</div>

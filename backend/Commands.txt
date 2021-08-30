@@ -1,0 +1,68 @@
+COLLEGE:-
+
+{"name":"MIT","code":200,"city":"chennai","state":"TN","emailId":"mit.annauniv.edu","phoneNumber":9089675652}
+{"name":"CIT","code":300,"city":"coimbatore","state":"TN","emailId":"cit.annauniv.edu","phoneNumber":9089675654}
+{"name":"GCT","code":400,"city":"coimbatore","state":"TN","emailId":"gct.annauniv.edu","phoneNumber":9089675651}
+{"name":"PSG","code":500,"city":"coimbatore","state":"TN","emailId":"psg.annauniv.edu","phoneNumber":9089675650}
+{"name":"GCC","code":600,"city":"chennai","state":"TN","emailId":"gcc.annauniv.edu","phoneNumber":9089675656}
+
+
+PARTICIPANTS:-
+
+{"name":"prem","emailId":"prem@rev.com","contactNumber":9090090909}
+{"name":"kirithiha","emailId":"kirithiha@rev.com","contactNumber":9090090908}
+{"name":"ragul","emailId":"ragul@rev.com","contactNumber":9190090908}
+
+ACCOMODATION REQUEST:-
+{"status":"pending"}
+
+EVENTS :-
+{
+   "name":"math-maverick",
+   "type":"tech",
+   "description":"math skills",
+   "maxSeats":10,
+   "availSeats":5,
+   "eventDate":"2021-11-23",
+   "eventTime":"13:00:00",
+   "contactMail":"ragul@gmail.com"
+   
+
+}
+
+FEST:-
+{
+    "id": 21,
+    "name": "mitafest",
+    "startDate": "2021-10-20",
+    "endDate": "2021-10-22",
+    "collegeId": 1003
+}
+
+
+
+use cems;
+
+select * from college;
+select * from participants;
+
+update college
+set email_id="mepco@gmail.com";
+
+select * from hostel;
+
+update hostel
+set available_slots = 0
+where id = 5;
+
+drop table accomodation;
+select * from accomodation;
+
+create database cems;
+show tables;
+select * from fest;
+select * from participants;
+select * from event;
+select * from event_participants;
+
+drop table event_participants;

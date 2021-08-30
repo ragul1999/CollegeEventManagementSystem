@@ -1,0 +1,49 @@
+<div class="wrapper">
+    <button class="btn btn-success " (click)="onAddEvent()" >Add an Event</button>
+</div>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+<div class="container">
+<br> 
+<div class="card bg-light">
+    <div class="wrapper2">
+        <button class="btn btn-link " (click)="onBackToHome()" >Back to Admin Home</button>
+        <span class="wrapper1">
+            <button class="btn btn-info " (click)="onBackToAddFest()" >Back to Add Fest</button>
+        </span>
+    </div>
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Update Fest</h4>
+	
+	<form #userForm="ngForm" (ngSubmit)='onUpdateFest(userForm.value)'>
+	
+
+        <div class="input-group-prepend">
+	<label>Fest start Date</label><br>
+    </div>
+    <div>
+        <input name="startDate" class="form-control"   type="date" ngModel required #startDate="ngModel">
+    </div><br> <!-- form-group// -->
+    
+	
+    <div class="form-group">  
+        <button type="submit" [disabled]="userForm.invalid" class="btn btn-primary btn-block" mat-raised-button > Update Fest Date</button>
+    </div> <!-- form-group// -->      
+                      
+</form>
+</article>
+</div> <!-- card.// -->
+
+</div> 
+<!--container end.//-->
+
+<router-outlet></router-outlet>
+
+

@@ -1,0 +1,58 @@
+<div>
+    <mat-toolbar color="primary">
+      <h1 id="app"> College Event Management System</h1>
+      <span class="wrapper1">
+        <button class="btn btn-link " id='logout' (click)="onLogOut()" >Log out</button>
+    </span>
+    </mat-toolbar>
+    <mat-tab-group id="tabs" backgroundColor="primary" color="accent">
+        <mat-tab label="Home" id="color">
+          <h1 id="content" style="text-align: center;"> Welcome Administrator for Event </h1>
+
+          <div class="container">
+            <div class="row" >
+          <div class="four col-md-3">
+            <div class="counter-box colored"> <span class="counter">{{participantCount}}</span>
+               <p>
+            Number of participants
+          </p>
+            </div>
+        </div>
+
+        <div class="four col-md-3">
+          <div class="counter-box colored"> <span class="counter">{{eventCount}}</span>
+            
+          <p>
+            Number of events
+          </p>
+          </div>
+      </div>
+      <div class="four col-md-3">
+        <div class="counter-box colored"> <span class="counter">{{accomCount}}</span>
+           <p>
+            Accommodation Request
+      </p>
+        </div>
+    </div>
+
+
+    </div>
+  </div>
+
+
+
+        </mat-tab>
+        
+        <mat-tab label="Add College"><app-addcollege></app-addcollege></mat-tab>
+        <mat-tab label="Update Fest Date"><app-update-fest></app-update-fest></mat-tab>
+        <mat-tab label="View Events"><app-view-event></app-view-event></mat-tab>
+        <mat-tab label="Add event"><app-add-event></app-add-event></mat-tab>
+        <mat-tab label="Add Fest"><app-add-fest></app-add-fest></mat-tab>
+        <mat-tab label="View Fest"><app-admin-view-fest></app-admin-view-fest></mat-tab>
+        <mat-tab label="Add Hostel"><app-addhostel></app-addhostel></mat-tab>
+        <mat-tab label="Update Accomodation Request"><app-update-accomodation-request></app-update-accomodation-request></mat-tab>
+        
+        </mat-tab-group>
+     
+</div>
+<router-outlet></router-outlet>

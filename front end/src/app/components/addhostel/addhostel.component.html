@@ -1,0 +1,20 @@
+<div>
+    <form #userForm="ngForm" (ngSubmit)='addHostel(userForm.value)' style="margin-left: 400px;">
+      <h3 style="margin-left: 180px;">Add Hostel</h3>
+        <div class="form-group col-md-6">
+          <label for="collegeid">Enter College Id</label>
+          <select class="form-control"  name="college" ngModel>
+            <option *ngFor = "let c of colleges" [value]=c.id>{{ c.name }}</option>
+          </select>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="hostelname">Enter Hostel name</label>
+          <input type="text" class="form-control" name="name" placeholder="Enter hostel name" ngModel required>
+        </div>
+      <div class="form-group col-md-6">
+        <label for="capacity">Enter the Hostel Capacity</label>
+        <input type="number" class="form-control" name="capacity" placeholder="Enter hostel capacity" ngModel required>
+      </div>
+      <button type="submit" style="margin-left: 150px;" class="btn btn-primary">Add Hostel</button>
+    </form>
+</div>

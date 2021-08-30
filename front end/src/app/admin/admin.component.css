@@ -1,0 +1,65 @@
+#app{
+    margin-left: 38%;
+  }
+
+  .wrapper1 {
+    position: absolute;
+    right: 20px;
+    }
+    #logout{
+      color:white;
+    }
+
+
+
+ 
+
+.container {
+  margin-top: 100px;
+  
+}
+/* For pending, approved, all request*/
+.counter-box {
+    display: block;
+    background: #f6f6f6;
+    padding: 40px 20px 37px;
+    text-align: center
+}
+
+ 
+
+/*pending approved all request theme*/
+.counter-box p {
+    margin: 0 0 0;
+    padding: 0;
+    color: #909090;
+    font-size: 18px;
+    font-weight: 500
+}
+
+ 
+
+/*For all Numbers*/
+.counter {
+    display: block;
+    font-size: 32px;
+    font-weight: 700;
+    color: #666;
+    line-height: 28px
+}
+
+ 
+
+/*Bg color for No of employee */
+.counter-box.colored {
+    background: #3acf87
+}
+
+ 
+
+/*To keep no of employee and it's count in white color*/
+.counter-box.colored p,
+.counter-box.colored .counter {
+    color: #fff
+}
+/*To display the column class at same line*/

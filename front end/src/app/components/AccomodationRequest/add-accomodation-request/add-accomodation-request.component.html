@@ -1,0 +1,10 @@
+<div>
+    <form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)' style="margin-left: 400px;" >
+          <div class="form-group col-md-6">
+            <label for="Status" style="margin-left: 40px;"><b>Click on the below button to add your accomodation request. </b></label>
+            <input type="hidden" #statusRef='ngModel' ngModel class="form-control" name="status" value="pending"  required>
+          </div>
+        <input  style="margin-left: 150px;" type="submit" value="Add Accomodation Request" class="btn btn-primary">
+
+      </form>
+</div>

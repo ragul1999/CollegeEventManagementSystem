@@ -1,0 +1,33 @@
+<div class="up" style="overflow-x:auto;">
+    <div class="wrapper">
+        <button class="btn btn-link " (click)="onBackToHome()" >Back to Admin Home</button>
+        <span class="wrapper1">
+            <button class="btn btn-link " (click)="onLogOut()" >Log out</button>
+        </span>
+    </div>
+    <table class="center">
+        <thead>
+            <tr> 
+                <th>Fest Id</th>
+                <th>Fest Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>College Code</th>
+                <th>Update Fest</th>
+                <th>Delete Fest</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let fest of festDetails">
+                <td >{{fest.id}}</td>
+                <td><a class="btn btn-link" (click)="onDisplayEvent($event, fest)">{{fest.name}}</a></td>
+                <td>{{fest.startDate}}</td>
+                <td>{{fest.endDate}}</td>
+                <td>{{fest.collegeId}}</td> 
+                <td><a class="btn btn-link " (click)="onUpdate($event,fest)">Update</a></td>
+                <td><a class="btn btn-link " (click)="onDelete($event,fest)">Delete</a></td>
+            </tr>
+        </tbody>
+      </table>
+      
+</div>

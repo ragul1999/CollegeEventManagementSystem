@@ -1,0 +1,122 @@
+
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
+
+<div class="container">
+   
+<br> 
+<div class="card bg-light">
+    <div class="wrapper">
+        <button class="btn btn-link " (click)="onBackToHome()" >Back to Admin Home</button>
+        <span class="wrapper1">
+            <button class="btn btn-info " (click)="onBackToAddFest()" >Back to Add Fest</button>
+        </span>
+    </div>
+   
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Add Event</h4>
+	
+	<form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)'>
+	<div class="form-group">
+        <div class="input-group-prepend">
+	    <label>Event name</label><br>
+    </div>
+     
+     <select required class="form-control"  name="name" ngModel  #eventName="ngModel">
+         <option value="" selected disabled>Select event name</option>
+        <option *ngFor = "let c of events" [value]=c.value>{{ c.name }}</option>
+      </select>
+      <div *ngIf='eventName.errors && eventName.touched' class="alert alert-danger">
+        <div [hidden]='!eventName.errors.required'> Select at least one event</div>
+    </div>
+
+    </div><br> <!-- form-group// -->
+
+    <div class="form-group">
+        <div class="input-group-prepend">
+	    <label>Event description</label><br>
+</div>
+     <input name="description" class="form-control" placeholder="Enter event description" type="text" ngModel required #eventDescription="ngModel">
+     <div *ngIf='eventDescription.errors && eventDescription.touched' class="alert alert-danger">
+        <div [hidden]='!eventDescription.errors.required'> Provide event description</div>
+    </div>
+    </div><br> <!-- form-group// -->
+
+    <div class="form-group">
+        <div class="input-group-prepend">
+	    <label>Event type</label><br>
+</div>
+    
+     <select required class="form-control"  name="type" ngModel  #eventType="ngModel">
+        <option value="" selected disabled>Select event type</option>
+        <option value="non-tech">Non-Technical event</option>
+        <option value="tech">Technical event</option>
+      </select>
+      <div *ngIf='eventType.errors && eventType.touched' class="alert alert-danger">
+        <div [hidden]='!eventType.errors.required'> Select at least one type</div>
+    </div>
+    </div><br> <!-- form-group// -->
+
+    <div class="form-group">
+        <div class="input-group-prepend">
+	<label>Event Date</label><br>
+    </div>
+        <input name="eventDate" class="form-control"   type="date" ngModel required #eventDate="ngModel">
+        <div *ngIf='eventDate.errors && eventDate.touched' class="alert alert-danger">
+            <div [hidden]='!eventDate.errors.required'> Provide event date</div>
+    </div>
+    </div><br> <!-- form-group// -->
+
+
+    <div class="form-group">
+        <div class="input-group-prepend">
+	<label>Event time</label><br>
+        </div>
+      <input name="eventTime" class="form-control"  type="time" ngModel required #eventTime="ngModel">
+      <div *ngIf='eventTime.errors && eventTime.touched' class="alert alert-danger">
+        <div [hidden]='!eventTime.errors.required'> Provide event time</div>
+    </div> 
+    </div><br><!-- form-group// -->
+    
+    <div class="form-group">
+        <div class="input-group-prepend">
+	    <label>Maximum Seats</label><br>
+</div>
+     <input name="maxSeats" class="form-control" placeholder="Enter maximum seats" type="number" min="0" ngModel required #eventMaxSeats="ngModel">
+     <div *ngIf='eventMaxSeats.errors && eventMaxSeats.touched' class="alert alert-danger">
+        <div [hidden]='!eventMaxSeats.errors.required'> Provide maximum seats</div>
+        <div *ngIf='eventMaxSeats.errors.pattern'>maximum seats must be greater than zero</div>
+    </div>
+    </div><br> <!-- form-group// -->
+
+
+   <div class="form-group">
+        <div class="input-group-prepend">
+	    <label>Contact mail</label><br>
+    </div>
+     <input name="contactMail" class="form-control" placeholder="Enter contact mail" type="email" ngModel required #eventContactMail="ngModel" email="true">
+     <div *ngIf='eventContactMail.errors && eventContactMail.touched' class="alert alert-danger">
+        <div [hidden]='!eventContactMail.errors.required'> Provide contact mail id</div>
+        <div *ngIf='eventContactMail.errors.pattern'>Provide a valid gmail id</div>
+     </div>
+   </div> <br> <!-- form-group// -->
+
+    <div class="form-group">  
+        <button [disabled]="userForm.invalid" type="submit" class="btn btn-success btn-block"> Create Event</button>
+    </div> <!-- form-group// -->      
+                      
+</form>
+</article>
+</div> <!-- card.// -->
+
+</div> 
+<!--container end.//-->
+<router-outlet></router-outlet>
+
+

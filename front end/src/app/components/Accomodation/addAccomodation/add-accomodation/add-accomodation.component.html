@@ -1,0 +1,14 @@
+<div>
+    <form #userForm="ngForm" (ngSubmit)='onSubmit(userForm.value)' style="margin-left: 400px;" >
+          <!-- <div class="form-group col-md-6">
+            <label for="ParticipantId">Enter Participant ID</label>
+            <input type="number" #participantidRef='ngModel' ngModel class="form-control" name="participants" placeholder="Enter Participant id" value="{{id}}" required>
+          </div> -->
+          <div class="form-group col-md-6">
+            <label for="HostelId">Enter Hostel ID</label>
+            <input type="number" #statusRef='ngModel' ngModel class="form-control" name="hostel" placeholder="Enter Hostel id" required>
+          </div>
+        <input  style="margin-left: 150px;" type="submit" value="Add Accomodation" class="btn btn-primary">
+
+      </form>
+</div>

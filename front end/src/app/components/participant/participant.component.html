@@ -1,0 +1,25 @@
+<div>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>emailId</th>
+                <th>PhoneNumber</th>
+                <th>Password</th>
+                <th>College Id</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let participant of participants">
+                <td>{{participant.id}}</td>
+                <td>{{participant.name}}</td>
+                <td>{{participant.emailId}}</td>
+                <td>{{participant.contactNumber}}</td>
+                <td>{{participant.password}}</td>
+                <td>{{participant.college.id}}</td>
+            </tr>
+        </tbody>
+      </table>
+      
+</div>

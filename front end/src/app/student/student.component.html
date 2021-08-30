@@ -1,0 +1,33 @@
+<div>
+    <mat-toolbar color="accent">
+      <span class="wrapper1" style="margin-left: 10px;">
+        <button class="btn btn-light " id='history' (click)="onHistory()" >View Your Event History</button>
+    </span>
+    <span class="wrapper1" style="margin-left: 10px;">
+      <button class="btn btn-light " id='history' (click)="onRequest()"> Request For Accomodation</button>
+  </span>
+  <span class="wrapper1" style="margin-left: 720px;">
+    <button class="btn btn-link " id='history' (click)="onLogOut()"> Logout</button>
+</span>
+    </mat-toolbar>
+    <div class="row">
+      <div *ngFor="let url of eventDetails " class="col"> 
+          <h2 style="margin-left: 100px;"> {{url.name |uppercase}}</h2>
+           <div *ngFor="let t of test | keyvalue" class="col"> 
+             <p *ngIf="t.key==url.name">
+             <img src={{t.value}} alt="Image not found" width="300px" height="350px" >
+            </p>
+           
+          </div>
+          <p>
+            {{url.description}}
+          </p>
+        <p> <span>
+           Available Seats:{{url.availSeats}}</span></p>
+           <p> <span>
+            Contact Mail:{{url.contactMail}}</span></p>
+          <button class="btn btn-info" (click)='register(url)' style="margin-left: 100px;" >Register </button>
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,45 @@
+<div class="up" style="overflow-x:auto;">
+    <div class="wrapper">
+        <button class="btn btn-link " (click)="onBackToHome()" >Back to Admin Home</button>
+        <span class="wrapper1">
+            <button class="btn btn-link " (click)="onBackToViewFest()" >Back to View Fest</button>
+        </span>
+    </div>
+    
+    <table *ngIf="eventDetails!=undefined && eventLength>0" class="center">
+        
+        <thead>
+            <tr>
+                <th>Event Id</th>
+                <th>Event Name</th>
+                <th>Event Description</th>
+                <th>Event Type</th>
+                <th>Event Event Date</th>
+                <th>Event Time</th>
+                <th>Event Maximum Seats</th>
+                <th>Event Available Seats</th>
+                <th>Contact Mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let event of eventDetails">
+               <td>{{event.id}}</td>
+                <td>{{event.name}}</td>
+                <td>{{event.description}}</td>
+                <td>{{event.type}}</td>
+                <td>{{event.eventDate}}</td>
+                <td>{{event.eventTime}}</td>
+                <td>{{event.maxSeats}}</td>
+                <td>{{event.availSeats}}</td>
+                <td>{{event.contactMail}}</td>
+        
+            </tr>
+        </tbody>
+      </table>
+      <h2 style="text-align: center;" *ngIf="eventDetails==undefined || eventLength==0;">
+        No event is present at the moment
+      </h2>
+</div>
+
+
+
